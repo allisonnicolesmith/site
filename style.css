@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    /* Sets default font-size to 16px, ensuring 1em = 16px; */
+    margin: 0;
+    font-family: Raleway;
+    background: url(Images/header_02.gif) no-repeat bottom right fixed;
+    background-size: 45%;
+}
+
+img {
+    width: 100%;
+}
+
+.header {
+    padding: 30px 70px;
+    overflow: hidden;
+    text-align: center;
+    display: block;
+}
+
+.header-title {
+    font-size: 2em;
+    text-transform: lowercase;
+    color: #60bdd3;
+    font-weight: 200;
+    float: left;
+    font-family: Raleway;
+    display: block;
+}
+
+.header a {
+    color: #ebd13f;
+    text-transform: lowercase;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 10px;
+    font-weight: bold;
+    font-family: Raleway;
+    display: inline-block;
+}
+
+.header-right {
+    float: right;
+}
+
+.header a.active {
+    color: #ebd13f;
+    text-decoration: underline;
+    text-decoration-color: #d82988;
+    letter-spacing: 1px;
+}
+
+.fa {
+    letter-spacing: 5px;
+    font-size: 20px;
+    text-decoration: none;
+    padding-right: 20px;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-twitter {
+    color: #d82988;
+}
+
+.fa-twitter:visited {
+    color: #d82988;
+}
+
+.fa-linkedin {
+    color: #d82988;
+}
+
+.fa-linkedin:visited {
+    color: #d82988;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    float: left;
+}
+
+.container p {
+    color: #4c2c81;
+    font-family: Raleway;
+    font-size: 1.7em;
+    line-height: 35px;
+    padding-left: 70px;
+}
+
+h1 {
+    font-weight: 300;
+    margin: 0.4em 0;
+    color: #d82988;
+    font-size: 3em;
+    padding-left: 70px;
+}
+
+YOUR TABLET/DESKTOP STYLES GO HERE *********************************************************************/ @media(min-width: 681px) {
+    /* Any adjustments for tablets and larger go here.
+  Note these styles will be applied to anything 681px or larger -- so tablet AND desktop */
+}
+
+/*********************************************************************
+YOUR DESKTOP-ONLY STYLES GO HERE
+*********************************************************************/
+@media(min-width: 729px) {
+    /* Any adjustments for desktop and larger go here.
+  Note these styles will be applied to anything 729px or larger -- so desktop */
+}

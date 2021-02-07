@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+  <head>
+    <link href="path/to/lightbox.css" rel="stylesheet" />
+    <meta charset="utf-8">
+    <!-- set the character set -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- first step to a responsive site -->
+    <title>allison nicole smith</title>
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&family=Abril+Fatface&display=swap" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      	  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      	  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      	<![endif]-->
+  </head>
+
+  <body>
+    <div class="header">
+      <div class="header-title">allison nicole smith</div>
+      <div class="header-right">
+        <a class="active" href="#home">about</a>
+        <a href="#portfolio">portfolio</a>
+        <a href="#resume">resume</a>
+        <a href="#contact">contact</a>
+        <i class="fa fa-twitter" a href="https://twitter.com/allison_n_smith"></i>
+        <i class="fa fa-linkedin" a href="https://www.linkedin.com/in/allison-smith-745a93103/"></i>
+      </div>
+    </div>
+    </div>
+    <div class="container">
+      <h1>hi, i'm a
+        <strong><span class="txt-rotate" data-period="2000" data-rotate='[ "freelance journalist.", "business reporter.", "data journalist.", "multimedia journalist." ]'></span>
+        </strong>
+      </h1>
+      <p>Born in Grand Prairie, Texas, I moved to New York City to study creative writing at CUNY Hunter College. I’ve taught English as an adjunct lecturer. I’ve worked in college textbook publishing as an assistant media editor. I also lived in
+        Bangkok for a year, where I wrote on topics related to food and travel. Now, I'm a student at the Craig Newmark Graduate School of Journalism at CUNY, where I’m learning how to not use the Oxford comma.</p>
+      <p>My reporting has appeared in Grub Street, Gotham Gazette, Travel + Leisure Southeast Asia, AFAR, Hidden Compass, DestinAsian and others.</p>
+
+      <p><strong>pronouns</strong>: she/her, they/them</p>
+    </div>
+
+    <script>
+      var TxtRotate = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+      };
+
+      TxtRotate.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+          this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+          this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+
+        var that = this;
+        var delta = 300 - Math.random() * 100;
+
+        if (this.isDeleting) {
+          delta /= 2;
+        }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+          delta = this.period;
+          this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+          this.isDeleting = false;
+          this.loopNum++;
+          delta = 500;
+        }
+
+        setTimeout(function() {
+          that.tick();
+        }, delta);
+      };
+
+      window.onload = function() {
+        var elements = document.getElementsByClassName('txt-rotate');
+        for (var i = 0; i < elements.length; i++) {
+          var toRotate = elements[i].getAttribute('data-rotate');
+          var period = elements[i].getAttribute('data-period');
+          if (toRotate) {
+            new TxtRotate(elements[i], JSON.parse(toRotate), period);
+          }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #4c2c81 }";
+        document.body.appendChild(css);
+      };
+    </script>
+
+
+  </body>
+
+</html>
